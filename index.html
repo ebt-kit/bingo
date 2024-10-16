@@ -1,0 +1,44 @@
+<html>
+
+<head>
+  <title>bingo</title>
+
+  <style>
+    button {
+      width: 60px;
+      height: 30px;
+      margin: 0px 10px 0 0;
+    }
+  </style>
+
+  <script>
+    var list1 = [];
+    var list2 = [];
+
+    for (var i = 1; i <= 75; i++) {
+      list1.push(i);
+    }
+
+    function shuffleArray(inputArray) {
+      inputArray.sort(() => Math.random() - 0.5);
+    }
+
+    shuffleArray(list1);
+
+    function lot(){
+      var value = list1[0];
+      list1.shift();
+      list2.unshift(value);
+      console.log(list2);
+
+      document.getElementById("console").innerHTML = list2;
+    }
+    
+  </script>
+</head>
+
+<body>
+  <button onclick="lot()">抽選</button><br>
+  <div id="console"></div>
+</body>
+</html>
